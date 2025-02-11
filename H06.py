@@ -1,5 +1,4 @@
-#Yuna Antonenko 06.02.2025
-
+# Yuna Antonenko 06.02.2025
 import tkinter as tk
 
  

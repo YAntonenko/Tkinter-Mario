@@ -14,7 +14,7 @@ def main():
     aken.title("Värvi nupud")
    
     nupp1 = tk.Button(aken, bg="red", font=("Arial", 16), command=lambda: kuva_varv("punane"))
-    nupp2 = tk.Button(aken, bg="orange", font=("Arial", 16), command=lambda: kuva_varv("oravž"))
+    nupp2 = tk.Button(aken, bg="orange", font=("Arial", 16), command=lambda: kuva_varv("oranž"))
     nupp3 = tk.Button(aken, bg="yellow", font=("Arial", 16), command=lambda: kuva_varv("kollane"))
     nupp4 = tk.Button(aken, bg="green", font=("Arial", 16), command=lambda: kuva_varv("rohaline"))
     nupp5 = tk.Button(aken, bg="blue", font=("Arial", 16), command=lambda: kuva_varv("sinine"))

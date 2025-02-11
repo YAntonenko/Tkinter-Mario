@@ -7,7 +7,7 @@ def main():
 
     aken = tk.Tk()
     aken.title("Yuna ülesanded")
-    aken.geometry("400x400")
+    aken.geometry("300x300")
     aken.resizable(True, False)
 
     label = tk.Label(aken, text="Tere, maailm!").pack()
