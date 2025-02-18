@@ -7,25 +7,31 @@ from pathlib import Path
 from PIL import Image, ImageOps
 import os
 
-filename = "Vali enne fail"
+selected_files = []
 
 def open_directory():
     directory = filedialog.askdirectory()
-    if directory: 
-        dir_label.config(text="Valitud kaust: {directory}")
-        kausta_sissu =os.listdir(directory)
+    dir_label.config(text="Valitud kaust: {directory}")
+    kausta_sissu =os.listdir(directory)
+    for fail in kausta_sissu:
+        file_name, file_extension = os.path.splitext(fail)
+        if file_extension == "jpg" or file_extension == ".jped":
+            text_field.insert(tk.END, fail + "\n")
+            selected_files.append(os.path.join(directory, fail))
 
-        for fail in kausta_sissu:
-            file_name, file_extension = os.path.splitext(fail)
-            print(file_extension)
-            if file_extension == "jpg":
-                tk.Text.insert(tk.END, fail="\n")
-    else:
-        dir_label.config(text="Kausta ei valitud.")
+    print(selected_files)
+
 
 
 def save_directory():
-    pass
+    save_directory = filedialog.askdirectory()
+    for file in selected_files:
+        img = Image.open(file)
+        img = img.resize((200, 200))
+        filename = os.path.basename(file)
+        img.save(os.path.join(save_directory, filename))
+    print("Pildid on salvedtatud.")
+
 
 
 aken = tk.Tk()

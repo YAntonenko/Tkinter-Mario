@@ -1,8 +1,13 @@
-# Yuna Antonenko 12.02.2025
+# Yuna Antonenko 18.02.2025
+
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
+import tkinter as tk
 
 import tkinter as tk
 
 aken = tk.Tk()
+aken = ttk.Window(themename="darkly")
 aken.geometry("500x500")
 aken.title("Pitsa tellimisvorm")
 
@@ -59,40 +64,13 @@ label = tk.Label(aken, text="Vali kättetoimetamine (hind):").pack()
 
 
 # Dropdown 
-valikud = ["Kuller (+3€ )", "Kohapeal"]
+valikud = ["Kuller (+3€)", "Kohapeal", "Kuller (+3€)"]
 selected_option = tk.StringVar()
-selected_option.set("Kuller (+3€)")
+selected_option.set("Vali üksus")
 
-dropdown = tk.OptionMenu(aken, selected_option, *valikud)
+dropdown = ttk.OptionMenu(aken, selected_option, *valikud,  bootstyle="info")
 dropdown.pack()  
 
-
-
-dir_label = tk.Label(aken, text="")
-dir_label.pack(pady=10)
-
-btn_confirm = tk.Button(aken, text="Arvuta hind", command=show_selection)
-btn_confirm.pack()
+btn_confirm = ttk.Button(aken, text="Arvuta hind", command=show_selection, bootstyle="danger")
+btn_confirm.pack(pady=20)
 aken.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
