@@ -7,20 +7,23 @@ def main():
 
 
     def kuva_sisestus():
-        tekst1 = sisestus1.get()  
-        tekst2 = sisestus2.get()  
-        tekst3 = sisestus3.get() 
-        vastus = tk.Label(aken, text=f"Esimene sisestus: {tekst1}, Teine sisestus: {tekst2}")        
+        laenusumma = int(sisestus1.get())  
+        kuintressimäär = float(sisestus2.get())/12/100
+        makste_arv = int(sisestus3.get())*12
+
+        igakuine_makse = laenusumma * kuintressimäär / (1 - (1 + kuintressimäär)** - makste_arv)
+
+        vastus = tk.Label(aken, text=f"Esimene sisestus: {laenusumma}, Teine sisestus: {makste_arv}")        
         vastus.pack()
 
-    label = tk.Label(aken, text="Laenusumma (€): ").pack()
+    label = tk.Label(aken, text="Laenusumma (€): ").pack(pady=(10, 0))
     sisestus1 = tk.Entry(aken).pack()
 
    
-    label = tk.Label(aken, text="Aastane interssimäär (%): ").pack()
+    label = tk.Label(aken, text="Aastane interssimäär (%): ").pack(pady=(10, 0))
     sisestus2 = tk.Entry(aken).pack()
 
-    label = tk.Label(aken, text="laenuperiood (aastates): ").pack()
+    label = tk.Label(aken, text="laenuperiood (aastates): ").pack(pady=(10, 0))
     sisestus3  = tk.Entry(aken).pack()
 
     nupp = tk.Button(aken, text="Arvuta", command=kuva_sisestus)

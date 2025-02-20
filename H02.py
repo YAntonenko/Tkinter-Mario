@@ -21,10 +21,15 @@ def main():
     aken.geometry("400x400")
     aken.resizable(True, False)
 
+    #pilt
     label = tk.Label(aken, text="Chuck Norris", font=("Arial", 16, "bold"), fg="blue").pack()
-    
     kuva_pilt(aken, "norris.jpg", 200, 200)
    
+    #text
+    lorem = "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    tekst = tk.Text(aken, wrap=tk.WORD, font=("Arial", 12), fg="black")
+    tekst.insert(tk.INSERT, lorem)
+    tekst.pack()
 
 
     aken.mainloop()
